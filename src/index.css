@@ -1,68 +1,127 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Custom Theme */
+@theme {
+  --color-beige: #F4E8D3;
+  --color-coffee: #3C2F2F;
+  --color-cream: #FFF8F0;
+  --color-matcha: #7CA982;
+  --color-charcoal: #2B2B2B;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Base Styles */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Custom Utilities */
+.bg-beige { background-color: var(--color-beige); }
+.bg-coffee { background-color: var(--color-coffee); }
+.bg-cream { background-color: var(--color-cream); }
+.bg-matcha { background-color: var(--color-matcha); }
+.bg-charcoal { background-color: var(--color-charcoal); }
+
+.text-beige { color: var(--color-beige); }
+.text-coffee { color: var(--color-coffee); }
+.text-cream { color: var(--color-cream); }
+.text-matcha { color: var(--color-matcha); }
+.text-charcoal { color: var(--color-charcoal); }
+
+.border-beige { border-color: var(--color-beige); }
+.border-coffee { border-color: var(--color-coffee); }
+.border-matcha { border-color: var(--color-matcha); }
+
+.hover\:bg-coffee:hover { background-color: var(--color-coffee); }
+.hover\:bg-charcoal:hover { background-color: var(--color-charcoal); }
+.hover\:bg-matcha:hover { background-color: var(--color-matcha); }
+.hover\:text-coffee:hover { color: var(--color-coffee); }
+.hover\:text-matcha:hover { color: var(--color-matcha); }
+.hover\:text-cream:hover { color: var(--color-cream); }
+.hover\:border-matcha:hover { border-color: var(--color-matcha); }
+
+.shadow-soft { box-shadow: 0 4px 20px rgba(60, 47, 47, 0.08); }
+
+.font-heading { font-family: 'Poppins', sans-serif; }
+.font-body { font-family: 'Inter', sans-serif; }
+
+/* Component Classes */
+.btn-primary {
+  background-color: var(--color-coffee);
+  color: var(--color-cream);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.btn-primary:hover {
+  background-color: var(--color-charcoal);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: var(--color-matcha);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.card-glass {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(60, 47, 47, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.input-modern {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-beige);
+  background-color: white;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.input-modern:focus {
+  border-color: var(--color-matcha);
+  box-shadow: 0 0 0 3px rgba(124, 169, 130, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-matcha);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-coffee);
 }
